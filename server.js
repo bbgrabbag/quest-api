@@ -5,13 +5,14 @@ const path = require('path');
 const { handleAudioUpload, handlePrompt } = require('./handlers');
 
 const uploader = multer({
-    storage: multer.diskStorage({
-        destination: (req, file, cb) => cb(null, path.join(__dirname, 'uploads')),
-        filename: (req, file, cb) => {
-            console.log(file);
-            cb(null, 'voice_clip.wav')
-        }
-    })
+    // storage: multer.diskStorage({
+    //     destination: (req, file, cb) => cb(null, path.join(__dirname, 'uploads')),
+    //     filename: (req, file, cb) => {
+    //         console.log(file);
+    //         cb(null, 'voice_clip.wav')
+    //     }
+    // })
+    storage: multer.memoryStorage()
 });
 
 const server = ex();

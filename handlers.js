@@ -5,7 +5,7 @@ const { prompt } = require('./prompt')
 
 const handleAudioUpload = async (req, res, next) => {
     try {
-        const encodedVoiceClip = fs.readFileSync(path.resolve(__dirname, './uploads', req.file.filename)).toString('base64');
+        const encodedVoiceClip = req.file.buffer.toString('base64');
         const transcription = await transcribeAudio(encodedVoiceClip);
         res.status(200).send({ status: 'success', transcription })
     } catch (err) {
