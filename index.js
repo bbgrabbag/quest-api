@@ -3,6 +3,6 @@ dotenv.config();
 
 const { server } = require('./server');
 
-server.listen(8080, () => {
+server.listen(process.env.PORT, () => {
     console.log('Mic test server running...')
 })
