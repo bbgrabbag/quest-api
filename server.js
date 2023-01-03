@@ -13,9 +13,8 @@ const uploader = multer({
 });
 
 const server = ex();
-
 server.use(
-    cors({ origin: ['http://localhost:5500'] }),
+    cors({ origin: process.env.ORIGIN_WHITELIST.split(',') }),
     ex.json(),
     (req, res, next) => {
         console.log(req.url);
