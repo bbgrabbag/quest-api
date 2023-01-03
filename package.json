@@ -1,11 +1,12 @@
 {
-  "name": "mic-test-server",
+  "name": "quest-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:watch": "nodemon index.js"
+    "dev:watch": "nodemon index.js",
+    "start": "node ./index.js"
   },
   "keywords": [],
   "author": "",
