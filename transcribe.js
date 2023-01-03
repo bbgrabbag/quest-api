@@ -4,8 +4,8 @@ const client = new speechAPI.SpeechClient();
 
 const transcribeAudio = async (base64EncodedAudioFile) => {
     const config = {
-        encoding: process.env.ENCODING,
-        sampleRateHertz: process.env.SAMPLE_RATE,
+        // encoding: process.env.ENCODING,
+        // sampleRateHertz: process.env.SAMPLE_RATE,
         languageCode: 'en-US',
     };
 

@@ -13,9 +13,7 @@ server.use(
     cors({ origin: process.env.ORIGIN_WHITELIST.split(',') }),
     ex.json(),
     (req, res, next) => {
-        console.log(req.url);
-        console.log(req.method);
-        console.log(req.body);
+        console.log('\n', req.method, req.url, req.body);
         next()
     });
 
