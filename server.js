@@ -1,7 +1,6 @@
 const ex = require('express');
 const cors = require('cors');
 const multer = require('multer');
-const path = require('path');
 const { handleAudioUpload, handlePrompt } = require('./handlers');
 
 const uploader = multer({
