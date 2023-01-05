@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quest API Reference</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      td {
+        padding: 1rem;
+      }
+
+      tr {
+        border-bottom: 1px solid black;
+      }
+
+      .no-wrap {
+        white-space: nowrap;
+      }
+      
+    </style>
+    <h1>Quest API Reference</h1>
+    <p>Author: <a href="https://github/com/bbgrabbag">Ben Turner</a></p>
+    <hr />
+    <table>
+      <thead>
+        <th>Endpoint</th>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Payload</th>
+        <th>Response</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code class="no-wrap">https://quest-api.herokuapp.com/audio/</code>
+          </td>
+          <td>
+            <code>POST</code>
+          </td>
+          <td>
+            <code>Transcribes text from audio file</code>
+          </td>
+          <td>
+            <code>
+              HTML FormData object containing raw audio file binary data with
+              valid
+              <a
+                href="https://cloud.google.com/speech-to-text/docs/encoding#audio-encodings"
+                >MIME type</a
+              >
+            </code>
+          </td>
+          <td>
+            <code>
+              { "status": "success", "transcription": "are you a robot" }
+            </code>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <code class="no-wrap"
+              >https://quest-api.herokuapp.com/prompt/</code
+            >
+          </td>
+          <td>
+            <code>POST</code>
+          </td>
+          <td>
+            <code>Receive a response from GPT bot</code>
+          </td>
+          <td>
+            <code> { "text": "are you a robot" } </code>
+          </td>
+          <td>
+            <code>
+              { "status": "success", "transcription": "\n\nNo I am not a
+              robot."}
+            </code>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

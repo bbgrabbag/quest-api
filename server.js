@@ -1,6 +1,7 @@
 const ex = require('express');
 const cors = require('cors');
 const multer = require('multer');
+const path = require('path');
 const { handleAudioUpload, handlePrompt } = require('./handlers');
 
 const uploader = multer({
@@ -16,8 +17,8 @@ server.use(
         next()
     });
 
-server.get('/', (req, res) => {
-    res.status(200).send({ status: 'success' })
+server.get('/', ex.static(path.join(__dirname, 'static')),(req, res) => {
+    res.status(200).sendFile(path.join(__dirname, 'static', 'api-reference.html'))
 });
 
 server.post('/audio', uploader.single('file'), handleAudioUpload)
